@@ -8,6 +8,6 @@ Homepage: https://example.org
 
 Package: firefox-installer
 Architecture: all
-Depends: ${misc:Depends}, libc6
+Depends: ${misc:Depends}, libc6, bzip2, zenity
 Description: Edit me
  Edit me. I am description
