@@ -1,0 +1,13 @@
+Source: firefox-installer
+Section: utils
+Priority: optional
+Maintainer: Your Name <your.email@example.org>
+Build-Depends: make
+Standards-Version: 4.3.0
+Homepage: https://example.org
+
+Package: firefox-installer
+Architecture: all
+Depends: ${misc:Depends}, libc6
+Description: Edit me
+ Edit me. I am description

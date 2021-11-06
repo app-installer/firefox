@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox
+Comment=Web Browser
+Exec=/opt/firefox-installer/firefox
+Icon=/opt/firefox-installer/firefox.png
+Terminal=false
+Type=Application
