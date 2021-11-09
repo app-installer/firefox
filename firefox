@@ -3,7 +3,11 @@ curdir="$(pwd)"
 set -o pipefail
 cd ~/.local
 if [[ ! -d firefox ]] ; then
-    wget "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" -O firefox.tar.bz2 2>&1 | \
+    OS=linux64
+    LANGPACK=""
+    [[ "$LANG" == "tr_TR.UTF-8" ]] && LANGPACK="tr"
+    [[ "$(uname -m)" == "i686" ]] && OS=linux
+    wget "https://download.mozilla.org/?product=firefox-latest-ssl&os=${OS}&lang=${LANGPACK}" -O firefox.tar.bz2 2>&1 | \
     sed -u 's/^[a-zA-Z\-].*//; s/.* \{1,2\}\([0-9]\{1,3\}\)%.*/\1\n#Downloading... \1%/; s/^20[0-9][0-9].*/#Done./' | \
     zenity --progress --percentage=0 --title=Download dialog --text="Please wait..." --auto-close --auto-kill
 
